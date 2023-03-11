@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hmap/pages/loading_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,8 +32,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text('Hello World'),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'H-Map',
+      home: Center(child: LoadingPage()),
     );
   }
 }
