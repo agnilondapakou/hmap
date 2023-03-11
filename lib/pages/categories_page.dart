@@ -187,37 +187,72 @@ class _CategoriesPageState extends State<CategoriesPage> {
             const SizedBox(
               height: 20,
             ),
+            // categories
+            const Text(
+              "Categories d'hotels",
+              style: TextStyle(
+                color: Color.fromARGB(255, 245, 161, 6),
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             ExpansionTile(
+              backgroundColor: const Color.fromARGB(255, 214, 214, 214),
+              leading: const Icon(
+                Icons.category,
+                color: Color.fromARGB(255, 126, 0, 215),
+              ),
               title: const Text(
-                "Categories d'hotels",
+                "Hotels 5 etoiles",
                 style: TextStyle(
-                  color: Color.fromARGB(255, 245, 161, 6),
-                  fontSize: 20,
+                  color: Color.fromARGB(255, 126, 0, 215),
+                  fontSize: 15,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               children: [
-                ExpansionTile(
-                  title: const Text(
-                    "Hotels 5 etoiles",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 126, 0, 215),
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
+                Container(
+                  width: MediaQuery.of(context).size.width - 20,
+                  height: MediaQuery.of(context).size.height / 4.8,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
                     ),
                   ),
-                  children: [
-                    ListTile(
-                      title: const Text(
-                        "Hotel 1",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 126, 0, 215),
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
+                  child: ListTile(
+                    title: const Text(
+                      "Onomo Hotel",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 126, 0, 215),
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
                       ),
-                      // ignore: prefer_const_literals_to_create_immutables
-                      subtitle: Row(
+                    ),
+                    // ignore: prefer_const_literals_to_create_immutables
+                    subtitle: Column(
+                      children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        // hotel logo
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height / 10,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/images/logo_onomo.png"),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                          ),
+                        ),
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
@@ -225,6 +260,11 @@ class _CategoriesPageState extends State<CategoriesPage> {
                               children: [
                                 const Text(
                                   "Quote: ",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 126, 0, 215),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                                 const Icon(
                                   Icons.star,
@@ -271,12 +311,559 @@ class _CategoriesPageState extends State<CategoriesPage> {
                               ),
                               child: const Text("Voir"),
                             ),
-                          ]),
+                          ],
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
                 ),
               ],
-            )
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ExpansionTile(
+              backgroundColor: const Color.fromARGB(255, 214, 214, 214),
+              leading: const Icon(
+                Icons.category,
+                color: Color.fromARGB(255, 126, 0, 215),
+              ),
+              title: const Text(
+                "Hotels 4 etoiles",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 126, 0, 215),
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width - 20,
+                  height: MediaQuery.of(context).size.height / 4.8,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  child: ListTile(
+                    title: const Text(
+                      "Onomo Hotel",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 126, 0, 215),
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    // ignore: prefer_const_literals_to_create_immutables
+                    subtitle: Column(
+                      children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        // hotel logo
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height / 10,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/images/logo_onomo.png"),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              // ignore: prefer_const_literals_to_create_immutables
+                              children: [
+                                const Text(
+                                  "Quote: ",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 126, 0, 215),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const Icon(
+                                  Icons.star,
+                                  color: Color.fromARGB(255, 245, 161, 6),
+                                  size: 15,
+                                ),
+                                const Icon(
+                                  Icons.star,
+                                  color: Color.fromARGB(255, 245, 161, 6),
+                                  size: 15,
+                                ),
+                                const Icon(
+                                  Icons.star,
+                                  color: Color.fromARGB(255, 245, 161, 6),
+                                  size: 15,
+                                ),
+                                const Icon(
+                                  Icons.star,
+                                  color: Color.fromARGB(255, 245, 161, 6),
+                                  size: 15,
+                                ),
+                              ],
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const HotelDetailsPage(),
+                                  ),
+                                );
+                              },
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                  const Color.fromARGB(255, 126, 0, 215),
+                                ),
+                              ),
+                              child: const Text("Voir"),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ExpansionTile(
+              backgroundColor: const Color.fromARGB(255, 214, 214, 214),
+              leading: const Icon(
+                Icons.category,
+                color: Color.fromARGB(255, 126, 0, 215),
+              ),
+              title: const Text(
+                "Hotels 3 etoiles",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 126, 0, 215),
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width - 20,
+                  height: MediaQuery.of(context).size.height / 4.8,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  child: ListTile(
+                    title: const Text(
+                      "Onomo Hotel",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 126, 0, 215),
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    // ignore: prefer_const_literals_to_create_immutables
+                    subtitle: Column(
+                      children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        // hotel logo
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height / 10,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/images/logo_onomo.png"),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              // ignore: prefer_const_literals_to_create_immutables
+                              children: [
+                                const Text(
+                                  "Quote: ",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 126, 0, 215),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const Icon(
+                                  Icons.star,
+                                  color: Color.fromARGB(255, 245, 161, 6),
+                                  size: 15,
+                                ),
+                                const Icon(
+                                  Icons.star,
+                                  color: Color.fromARGB(255, 245, 161, 6),
+                                  size: 15,
+                                ),
+                                const Icon(
+                                  Icons.star,
+                                  color: Color.fromARGB(255, 245, 161, 6),
+                                  size: 15,
+                                ),
+                              ],
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const HotelDetailsPage(),
+                                  ),
+                                );
+                              },
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                  const Color.fromARGB(255, 126, 0, 215),
+                                ),
+                              ),
+                              child: const Text("Voir"),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ExpansionTile(
+              backgroundColor: const Color.fromARGB(255, 214, 214, 214),
+              leading: const Icon(
+                Icons.category,
+                color: Color.fromARGB(255, 126, 0, 215),
+              ),
+              title: const Text(
+                "Hotels 2 etoiles",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 126, 0, 215),
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width - 20,
+                  height: MediaQuery.of(context).size.height / 4.8,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  child: ListTile(
+                    title: const Text(
+                      "Onomo Hotel",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 126, 0, 215),
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    // ignore: prefer_const_literals_to_create_immutables
+                    subtitle: Column(
+                      children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        // hotel logo
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height / 10,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/images/logo_onomo.png"),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              // ignore: prefer_const_literals_to_create_immutables
+                              children: [
+                                const Text(
+                                  "Quote: ",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 126, 0, 215),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const Icon(
+                                  Icons.star,
+                                  color: Color.fromARGB(255, 245, 161, 6),
+                                  size: 15,
+                                ),
+                                const Icon(
+                                  Icons.star,
+                                  color: Color.fromARGB(255, 245, 161, 6),
+                                  size: 15,
+                                ),
+                              ],
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const HotelDetailsPage(),
+                                  ),
+                                );
+                              },
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                  const Color.fromARGB(255, 126, 0, 215),
+                                ),
+                              ),
+                              child: const Text("Voir"),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ExpansionTile(
+              backgroundColor: const Color.fromARGB(255, 214, 214, 214),
+              leading: const Icon(
+                Icons.category,
+                color: Color.fromARGB(255, 126, 0, 215),
+              ),
+              title: const Text(
+                "Hotels 1 etoiles",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 126, 0, 215),
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width - 20,
+                  height: MediaQuery.of(context).size.height / 4.8,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  child: ListTile(
+                    title: const Text(
+                      "Onomo Hotel",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 126, 0, 215),
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    // ignore: prefer_const_literals_to_create_immutables
+                    subtitle: Column(
+                      children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        // hotel logo
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height / 10,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/images/logo_onomo.png"),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              // ignore: prefer_const_literals_to_create_immutables
+                              children: [
+                                const Text(
+                                  "Quote: ",
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 126, 0, 215),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const Icon(
+                                  Icons.star,
+                                  color: Color.fromARGB(255, 245, 161, 6),
+                                  size: 15,
+                                ),
+                              ],
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const HotelDetailsPage(),
+                                  ),
+                                );
+                              },
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                  const Color.fromARGB(255, 126, 0, 215),
+                                ),
+                              ),
+                              child: const Text("Voir"),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ExpansionTile(
+              backgroundColor: const Color.fromARGB(255, 214, 214, 214),
+              leading: const Icon(
+                Icons.category,
+                color: Color.fromARGB(255, 126, 0, 215),
+              ),
+              title: const Text(
+                "Autres hotels",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 126, 0, 215),
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width - 20,
+                  height: MediaQuery.of(context).size.height / 4.8,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                  ),
+                  child: ListTile(
+                    title: const Text(
+                      "Onomo Hotel",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 126, 0, 215),
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    // ignore: prefer_const_literals_to_create_immutables
+                    subtitle: Column(
+                      children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        // hotel logo
+                        Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: MediaQuery.of(context).size.height / 10,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/images/logo_onomo.png"),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const HotelDetailsPage(),
+                                  ),
+                                );
+                              },
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                  const Color.fromARGB(255, 126, 0, 215),
+                                ),
+                              ),
+                              child: const Text("Voir"),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
           ],
         ),
       ),
