@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:hmap/pages/Hotel_details.dart';
-import 'package:hmap/pages/bon_plans_page.dart';
 import 'package:hmap/pages/categories_page.dart';
+import 'package:hmap/pages/home_page.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class BonPlansPage extends StatefulWidget {
+  const BonPlansPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<BonPlansPage> createState() => _BonPlansPageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
+class _BonPlansPageState extends State<BonPlansPage> {
+  int _selectedIndex = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,7 +77,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height / 4.5,
+              height: MediaQuery.of(context).size.height / 6,
               padding: const EdgeInsets.only(
                   top: 20, bottom: 10, left: 10, right: 10),
               decoration: const BoxDecoration(
@@ -99,9 +98,10 @@ class _HomePageState extends State<HomePage> {
               // ignore: prefer_const_constructors
               child: Center(
                 child: Column(
+                  // ignore: prefer_const_literals_to_create_immutables
                   children: [
                     const Text(
-                      "Hotels-Map",
+                      "Bons plans",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
@@ -113,36 +113,8 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       height: 20,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, right: 20),
-                      child: Row(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        // ignore: prefer_const_literals_to_create_immutables
-                        children: [
-                          const Icon(
-                            Icons.add_location_alt_rounded,
-                            color: Colors.white,
-                            size: 40,
-                          ),
-                          const Icon(
-                            Icons.arrow_circle_right_rounded,
-                            color: Colors.white,
-                            size: 20,
-                          ),
-                          const Icon(
-                            Icons.maps_home_work,
-                            color: Colors.white,
-                            size: 40,
-                          )
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
                     const Text(
-                      "Trouvez l'hotel qui vous convient le mieux",
+                      "Trouvez votre hotel en fonction de vos criteres (Prix, localisation, etc...)",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
@@ -221,7 +193,7 @@ class _HomePageState extends State<HomePage> {
                 const Padding(
                   padding: EdgeInsets.only(left: 20),
                   child: Text(
-                    "Hotels populaires",
+                    "Les moins chers",
                     style: TextStyle(
                       color: Color.fromARGB(255, 245, 161, 6),
                       fontSize: 15,
@@ -266,7 +238,52 @@ class _HomePageState extends State<HomePage> {
                 const Padding(
                   padding: EdgeInsets.only(left: 20),
                   child: Text(
-                    "Hotels recommandés",
+                    "Les plus chers",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 245, 161, 6),
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    const SizedBox(width: 20),
+                    const HotelCardWidget(),
+                    const SizedBox(width: 20),
+                    const HotelCardWidget(),
+                    const SizedBox(width: 20),
+                    const HotelCardWidget(),
+                    const SizedBox(width: 20),
+                    const HotelCardWidget(),
+                    const SizedBox(width: 20),
+                    const HotelCardWidget(),
+                    const SizedBox(width: 20),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              // ignore: prefer_const_literals_to_create_immutables
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Text(
+                    "Les plus proches de vous",
                     style: TextStyle(
                       color: Color.fromARGB(255, 245, 161, 6),
                       fontSize: 15,
@@ -304,164 +321,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class HotelCardWidget extends StatelessWidget {
-  const HotelCardWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(left: 5, right: 5, bottom: 5),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(
-          Radius.circular(10),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 10,
-            spreadRadius: 1,
-            offset: Offset(0, 5),
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image(
-            image: const AssetImage("assets/images/onomo.jpg"),
-            width: MediaQuery.of(context).size.width / 2,
-            height: MediaQuery.of(context).size.height / 5,
-            fit: BoxFit.contain,
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          const Text(
-            "Hotel Onomo",
-            style: TextStyle(
-              // gradien de couleur
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            // ignore: prefer_const_literals_to_create_immutables
-            children: [
-              const Icon(
-                Icons.location_on,
-                color: Colors.grey,
-                size: 20,
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              const Text(
-                "Boulevard Du Mono, Lomé",
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 15,
-                ),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            // ignore: prefer_const_literals_to_create_immutables
-            children: [
-              const Icon(
-                Icons.star,
-                color: Color.fromARGB(255, 255, 187, 2),
-                size: 20,
-              ),
-              const Icon(
-                Icons.star,
-                color: Color.fromARGB(255, 255, 187, 2),
-                size: 20,
-              ),
-              const Icon(
-                Icons.star,
-                color: Color.fromARGB(255, 255, 187, 2),
-                size: 20,
-              ),
-              const Icon(
-                Icons.star,
-                color: Color.fromARGB(255, 255, 187, 2),
-                size: 20,
-              ),
-              const Icon(
-                Icons.star_half,
-                color: Color.fromARGB(255, 255, 187, 2),
-                size: 20,
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              const Text(
-                "4.5",
-                style: TextStyle(
-                  color: Color.fromARGB(255, 255, 187, 2),
-                  fontSize: 15,
-                ),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              const Text(
-                "(200)",
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 15,
-                ),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const HotelDetailsPage(),
-                ),
-              );
-            },
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all<Color>(
-                const Color.fromARGB(255, 126, 0, 215),
-              ),
-            ),
-            child: const Text(
-              "Voir plus",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 15,
-              ),
-            ),
-          ),
-        ],
       ),
     );
   }

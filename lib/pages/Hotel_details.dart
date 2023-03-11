@@ -1,8 +1,13 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:hmap/pages/bon_plans_page.dart';
+import 'package:hmap/pages/categories_page.dart';
 import 'package:readmore/readmore.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'home_page.dart';
 
 class HotelDetailsPage extends StatefulWidget {
   const HotelDetailsPage({super.key});
@@ -12,6 +17,8 @@ class HotelDetailsPage extends StatefulWidget {
 }
 
 class _HotelDetailsPageState extends State<HotelDetailsPage> {
+  int _selectedIndex = 0;
+
   webSiteUrl(String url) async {
     // ignore: deprecated_member_use
     if (await launch(url.toString())) {
@@ -72,28 +79,57 @@ class _HotelDetailsPageState extends State<HotelDetailsPage> {
         .toList();
     return Scaffold(
         appBar: AppTopBar(),
-        bottomNavigationBar: const Padding(
-          padding: EdgeInsets.all(8.0),
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.all(8.0),
           child: GNav(
             gap: 8,
             iconSize: 24,
-            tabBackgroundColor: Color.fromARGB(63, 125, 0, 215),
-            activeColor: Color.fromARGB(255, 126, 0, 215),
-            padding: EdgeInsets.all(16),
+            tabBackgroundColor: const Color.fromARGB(63, 125, 0, 215),
+            activeColor: const Color.fromARGB(255, 126, 0, 215),
+            padding: const EdgeInsets.all(16),
+            // ignore: prefer_const_literals_to_create_immutables
             tabs: [
-              GButton(
+              const GButton(
                 icon: Icons.house_outlined,
                 text: 'Accueil',
               ),
-              GButton(
+              const GButton(
                 icon: Icons.check_circle_outline,
                 text: 'Bon plans',
               ),
-              GButton(
+              const GButton(
                 icon: Icons.style_outlined,
                 text: 'Categories',
               ),
             ],
+            selectedIndex: _selectedIndex,
+            onTabChange: (index) {
+              setState(() {
+                _selectedIndex = index;
+                if (_selectedIndex == 1) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BonPlansPage(),
+                    ),
+                  );
+                } else if (_selectedIndex == 0) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomePage(),
+                    ),
+                  );
+                } else if (_selectedIndex == 2) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CategoriesPage(),
+                    ),
+                  );
+                }
+              });
+            },
           ),
         ),
         body: SingleChildScrollView(
@@ -263,7 +299,7 @@ AppBar AppTopBar() {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         const Image(
-          image: AssetImage("assets/images/logo.jpg"),
+          image: AssetImage("assets/images/hmap.png"),
           width: 40,
           height: 40,
         ),
