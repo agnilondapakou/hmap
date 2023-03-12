@@ -13,7 +13,7 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3)).then(
+    Future.delayed(const Duration(seconds: 6)).then(
       (value) {
         Navigator.pushReplacement(
           context,
