@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:hmap/pages/dashboard_page.dart';
 import 'package:hmap/pages/home_page.dart';
 
 class LoadingPage extends StatefulWidget {
@@ -18,7 +19,7 @@ class _LoadingPageState extends State<LoadingPage> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const HomePage(),
+            builder: (context) => const DashboardPage(),
           ),
         );
       },
@@ -57,6 +58,6 @@ Widget logoWidget = const Card(
 );
 
 Widget loadingWidget = const SpinKitThreeBounce(
-  color: Color.fromARGB(255, 126, 0, 215),
+  color: Color.fromARGB(255, 0, 151, 178),
   size: 20.0,
 );
