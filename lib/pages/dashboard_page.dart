@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hmap/widgets/grid_dashboard_widget.dart';
+import 'package:hmap/widgets/top_bar_widget.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -16,7 +17,7 @@ class _DashboardPageState extends State<DashboardPage> {
       body: Column(
         children: [
           SizedBox(
-            height: 10,
+            height: 70,
           ),
           Padding(
             padding: EdgeInsets.only(left: 16, right: 16),
@@ -26,10 +27,23 @@ class _DashboardPageState extends State<DashboardPage> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Image(
-                      image: AssetImage("assets/images/hmap.png"),
-                      width: 100,
-                      height: 100,
+                    Center(
+                      child: CircleAvatar(
+                        radius: 25,
+                        backgroundColor: Color.fromARGB(255, 0, 151, 178),
+                        child: Text(
+                          "H",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            fontSize: 20,
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 14,
                     ),
                     Text(
                       "Bienvenue sur Hotels Map",

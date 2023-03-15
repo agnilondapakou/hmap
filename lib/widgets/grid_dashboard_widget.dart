@@ -5,38 +5,38 @@ class GridDashboardWidget extends StatelessWidget {
     title: "Hotels",
     subtitle: "Les meilleurs hotels du pays",
     img: "assets/images/hotelbtn.png",
-    route: '/home',
+    route: 'HomePage()',
   );
 
   Items item2 = new Items(
       title: "Localisations",
       subtitle: "Hotels a proximité",
       img: "assets/images/location.png",
-      route: '/home');
+      route: 'HomePage()');
 
   Items item3 = new Items(
       title: "Annonces",
       subtitle: "Fil d'actualité des hotels",
       img: "assets/images/news.png",
-      route: '/home');
+      route: 'HomePage()');
 
   Items item4 = new Items(
       title: "Restaurants",
       subtitle: "Meilleurs restaurants de la localite",
       img: "assets/images/resto.png",
-      route: '/home');
+      route: 'HomePage()');
 
   Items item5 = new Items(
       title: "Sites touristiques",
       subtitle: "Les sites touristiques du pays",
       img: "assets/images/sites.png",
-      route: '/home');
+      route: 'HomePage()');
 
   Items item6 = new Items(
       title: "Historique",
       subtitle: "Vos hotels préférés",
       img: "assets/images/love.png",
-      route: '/home');
+      route: 'HomePage()');
 
   @override
   Widget build(BuildContext context) {
@@ -57,48 +57,53 @@ class GridDashboardWidget extends StatelessWidget {
         crossAxisSpacing: 18,
         mainAxisSpacing: 18,
         children: myList.map((data) {
-          return Container(
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 238, 238, 238),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  data.img,
-                  width: 42,
-                ),
-                SizedBox(
-                  height: 14,
-                ),
-                Text(
-                  data.title,
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 0, 0, 0),
-                    fontSize: 14,
-                    fontFamily: "Poppins",
-                    fontWeight: FontWeight.w700,
+          return InkWell(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 238, 238, 238),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    data.img,
+                    width: 42,
                   ),
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Text(
-                  data.subtitle,
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 79, 79, 79),
-                    fontSize: 10,
-                    fontFamily: "Poppins",
-                    fontWeight: FontWeight.w700,
+                  SizedBox(
+                    height: 14,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(
-                  height: 14,
-                ),
-              ],
+                  Text(
+                    data.title,
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      fontSize: 14,
+                      fontFamily: "Poppins",
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Text(
+                    data.subtitle,
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 79, 79, 79),
+                      fontSize: 10,
+                      fontFamily: "Poppins",
+                      fontWeight: FontWeight.w700,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(
+                    height: 14,
+                  ),
+                ],
+              ),
             ),
+            onTap: () {
+              Navigator.pushNamed(context, data.route);
+            },
           );
         }).toList(),
       ),
@@ -110,7 +115,6 @@ class Items {
   String title;
   String subtitle;
   String img;
-  // page route
   String route;
   Items(
       {required this.title,

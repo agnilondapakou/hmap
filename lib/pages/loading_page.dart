@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hmap/pages/dashboard_page.dart';
-import 'package:hmap/pages/home_page.dart';
 
 class LoadingPage extends StatefulWidget {
   const LoadingPage({super.key});
