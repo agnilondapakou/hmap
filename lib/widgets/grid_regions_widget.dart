@@ -1,42 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:hmap/pages/home_page.dart';
+import 'package:hmap/pages/login_page.dart';
 
-class GridDashboardWidget extends StatelessWidget {
+class GridRegionsWidget extends StatelessWidget {
   Items item1 = new Items(
-    title: "Hotels",
-    subtitle: "Les meilleurs hotels du pays",
-    img: "assets/images/hotelbtn.png",
-    route: 'LoginPage()',
+    title: "Maritime",
+    // subtitle: "Les meilleurs hotels du pays",
+    img: "assets/images/togo.png",
+    route: LoginPage(),
   );
 
   Items item2 = new Items(
-      title: "Localisations",
-      subtitle: "Hotels a proximité",
-      img: "assets/images/location.png",
-      route: 'HomePage()');
+      title: "Plateaux",
+      // subtitle: "Hotels a proximité",
+      img: "assets/images/togo.png",
+      route: LoginPage());
 
   Items item3 = new Items(
-      title: "Annonces",
-      subtitle: "Fil d'actualité des hotels",
-      img: "assets/images/news.png",
-      route: 'HomePage()');
+      title: "Centrale",
+      // subtitle: "Fil d'actualité des hotels",
+      img: "assets/images/togo.png",
+      route: LoginPage());
 
   Items item4 = new Items(
-      title: "Restaurants",
-      subtitle: "Meilleurs restaurants de la localite",
-      img: "assets/images/resto.png",
-      route: 'HomePage()');
+      title: "Kara",
+      // subtitle: "Meilleurs restaurants de la localite",
+      img: "assets/images/togo.png",
+      route: LoginPage());
 
   Items item5 = new Items(
-      title: "Sites touristiques",
-      subtitle: "Les sites touristiques du pays",
-      img: "assets/images/sites.png",
-      route: 'HomePage()');
-
-  Items item6 = new Items(
-      title: "Historique",
-      subtitle: "Vos hotels préférés",
-      img: "assets/images/love.png",
-      route: 'HomePage()');
+      title: "Savane",
+      // subtitle: "Les sites touristiques du pays",
+      img: "assets/images/togo.png",
+      route: LoginPage());
 
   @override
   Widget build(BuildContext context) {
@@ -46,12 +42,11 @@ class GridDashboardWidget extends StatelessWidget {
       item3,
       item4,
       item5,
-      item6,
     ];
 
     return Flexible(
       child: GridView.count(
-        crossAxisCount: 2,
+        crossAxisCount: 3,
         childAspectRatio: 1.0,
         padding: EdgeInsets.only(left: 16, right: 16),
         crossAxisSpacing: 18,
@@ -71,38 +66,28 @@ class GridDashboardWidget extends StatelessWidget {
                     width: 42,
                   ),
                   SizedBox(
-                    height: 14,
+                    height: 5,
                   ),
                   Text(
-                    data.title,
+                    data.title.toUpperCase(),
                     style: TextStyle(
                       color: Color.fromARGB(255, 0, 0, 0),
                       fontSize: 14,
                       fontFamily: "Poppins",
                       fontWeight: FontWeight.w700,
                     ),
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Text(
-                    data.subtitle,
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 79, 79, 79),
-                      fontSize: 10,
-                      fontFamily: "Poppins",
-                      fontWeight: FontWeight.w700,
-                    ),
                     textAlign: TextAlign.center,
-                  ),
-                  SizedBox(
-                    height: 14,
                   ),
                 ],
               ),
             ),
             onTap: () {
-              Navigator.pushNamed(context, data.route);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => data.route,
+                ),
+              );
             },
           );
         }).toList(),
@@ -113,12 +98,12 @@ class GridDashboardWidget extends StatelessWidget {
 
 class Items {
   String title;
-  String subtitle;
+  // String subtitle;
   String img;
-  String route;
+  Widget route;
   Items(
       {required this.title,
-      required this.subtitle,
+      // required this.subtitle,
       required this.img,
       required this.route});
 }

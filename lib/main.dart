@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hmap/pages/dashboard_page.dart';
-import 'package:hmap/pages/loading_page.dart';
 
 import 'route/routes_manager.dart';
 

@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:hmap/pages/hotels_regions.dart';
 import 'package:hmap/widgets/drawer_widget.dart';
-import 'package:hmap/widgets/grid_dashboard_widget.dart';
+import '../widgets/grid_regions_widget.dart';
 
-class DashboardPage extends StatefulWidget {
-  const DashboardPage({super.key});
+class HotelsRegionsPage extends StatefulWidget {
+  const HotelsRegionsPage({super.key});
 
   @override
-  State<DashboardPage> createState() => _DashboardPageState();
+  State<HotelsRegionsPage> createState() => _HotelsRegionsPageState();
 }
 
-class _DashboardPageState extends State<DashboardPage> {
+class _HotelsRegionsPageState extends State<HotelsRegionsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +26,7 @@ class _DashboardPageState extends State<DashboardPage> {
             height: 10,
           ),
           Image(
-            image: AssetImage("assets/images/serachhome.png"),
+            image: AssetImage("assets/images/regionmap.png"),
             width: 150,
             height: 150,
           ),
@@ -37,36 +36,25 @@ class _DashboardPageState extends State<DashboardPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Bienvenue sur Hotels Map",
+                  "Retrouvez les hotels par region",
                   style: TextStyle(
                     color: Color.fromARGB(255, 61, 61, 61),
-                    fontSize: 24,
-                    fontFamily: "",
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                SizedBox(
-                  height: 4,
-                ),
-                Text(
-                  "Ici vous pouvez trouver :",
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 79, 79, 79),
-                    fontSize: 14,
+                    fontSize: 22,
                     fontFamily: "Poppins",
                     fontWeight: FontWeight.w700,
                   ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: 4,
                 ),
               ],
             ),
           ),
           SizedBox(
-            height: 20,
-          ),
-          GridDashboardWidget(),
-          SizedBox(
             height: 40,
           ),
+          GridRegionsWidget(),
         ],
       ),
     );
