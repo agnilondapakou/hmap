@@ -4,23 +4,5 @@
          the Flutter tool needs it to communicate with the running application
          to allow setting breakpoints, to provide hot reload, etc.
     -->
-    <application android:label="hmap" android:icon="@mipmap/ic_launcher">
-    <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyDPSK1qumWLSmkbURmcjADNAtph_Aohv7k"/>
-        <activity android:name=".MainActivity"
-            android:launchMode="singleTop"
-            android:theme="@style/LaunchTheme"
-            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-            android:hardwareAccelerated="true"
-            android:windowSoftInputMode="adjustResize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <meta-data android:name="flutterEmbedding" android:value="2" />
-        </activity>
-        <activity android:name="io.flutter.plugins.googlemaps.GoogleMapsPluginActivity"
-            android:theme="@style/TransparentTheme"/>
-
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
