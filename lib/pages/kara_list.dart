@@ -7,21 +7,21 @@ final Color color = Color.fromARGB(255, 0, 151, 178);
 final IconData icon = Icons.hotel;
 final Color backColor = Color.fromARGB(255, 255, 255, 255);
 
-class MaritimHotelListPage extends StatefulWidget {
-  const MaritimHotelListPage({super.key});
+class KaraListPage extends StatefulWidget {
+  const KaraListPage({super.key});
 
   @override
-  State<MaritimHotelListPage> createState() => _MaritimHotelListPageState();
+  State<KaraListPage> createState() => _KaraListPageState();
 }
 
-class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
+class _KaraListPageState extends State<KaraListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            "Region Maritime",
+            "Region de la Kara",
             style: TextStyle(
               color: Color.fromARGB(255, 255, 255, 255),
               fontSize: 20,
@@ -285,7 +285,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
                                 child: Image.asset(
-                                  "assets/images/onomo.jpg",
+                                  "assets/images/concorde.jpg",
                                   width: 150,
                                   height: 150,
                                   fit: BoxFit.fitHeight,
@@ -297,7 +297,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                               child: Column(
                                 children: [
                                   Text(
-                                    "Onomo Hotel",
+                                    "Concorde Hotel Kara",
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontFamily: "Poppins",
@@ -315,7 +315,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                                         color: Colors.amber,
                                       ),
                                       Text(
-                                        "4.5",
+                                        "3",
                                         style: TextStyle(
                                           fontSize: 14,
                                           fontFamily: "Poppins",
@@ -368,7 +368,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                                             "Categorie: ",
                                           ),
                                           Text(
-                                            "4 etoiles",
+                                            "3 etoiles",
                                             style: TextStyle(
                                                 fontSize: 14,
                                                 fontFamily: "Poppins",
@@ -397,7 +397,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
                                 child: Image.asset(
-                                  "assets/images/ibis.jpg",
+                                  "assets/images/kara.jpg",
                                   width: 150,
                                   height: 150,
                                   fit: BoxFit.fitHeight,
@@ -409,7 +409,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                               child: Column(
                                 children: [
                                   Text(
-                                    "Ibis Hotel",
+                                    "Hotel Kara",
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontFamily: "Poppins",
@@ -427,7 +427,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                                         color: Colors.amber,
                                       ),
                                       Text(
-                                        "4.5",
+                                        "2",
                                         style: TextStyle(
                                           fontSize: 14,
                                           fontFamily: "Poppins",
@@ -480,7 +480,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                                             "Categorie: ",
                                           ),
                                           Text(
-                                            "4 etoiles",
+                                            "2 etoiles",
                                             style: TextStyle(
                                                 fontSize: 14,
                                                 fontFamily: "Poppins",
@@ -509,7 +509,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
                                 child: Image.asset(
-                                  "assets/images/sarakawa.jpeg",
+                                  "assets/images/htkoza.jpg",
                                   width: 150,
                                   height: 150,
                                   fit: BoxFit.fitHeight,
@@ -521,7 +521,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                               child: Column(
                                 children: [
                                   Text(
-                                    "Hotel Sarakawa",
+                                    "Etoile De La Kozah",
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontFamily: "Poppins",
@@ -539,7 +539,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                                         color: Colors.amber,
                                       ),
                                       Text(
-                                        "4.5",
+                                        "3",
                                         style: TextStyle(
                                           fontSize: 14,
                                           fontFamily: "Poppins",
@@ -592,7 +592,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                                             "Categorie: ",
                                           ),
                                           Text(
-                                            "4 etoiles",
+                                            "3 etoiles",
                                             style: TextStyle(
                                                 fontSize: 14,
                                                 fontFamily: "Poppins",
@@ -651,7 +651,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10),
                                 child: Image.asset(
-                                  "assets/images/onomo.jpg",
+                                  "assets/images/htkoza.jpg",
                                   width: 150,
                                   height: 150,
                                   fit: BoxFit.fitHeight,
@@ -663,7 +663,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                               child: Column(
                                 children: [
                                   Text(
-                                    "Onomo Hotel",
+                                    "Hotel Etoile De La Kozah",
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontFamily: "Poppins",
@@ -681,7 +681,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                                         color: Colors.amber,
                                       ),
                                       Text(
-                                        "4.5",
+                                        "3",
                                         style: TextStyle(
                                           fontSize: 14,
                                           fontFamily: "Poppins",
@@ -734,7 +734,7 @@ class _MaritimHotelListPageState extends State<MaritimHotelListPage> {
                                             "Categorie: ",
                                           ),
                                           Text(
-                                            "4 etoiles",
+                                            "3 etoiles",
                                             style: TextStyle(
                                                 fontSize: 14,
                                                 fontFamily: "Poppins",

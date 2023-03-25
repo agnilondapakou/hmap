@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hmap/pages/login_page.dart';
 import 'package:hmap/pages/maritim_list.dart';
 import 'package:hmap/pages/maritim_map_page.dart';
+import 'package:hmap/pages/plateau_list.dart';
+
+import '../pages/kara_list.dart';
 
 // ignore: must_be_immutable
 class GridRegionsWidget extends StatelessWidget {
@@ -17,8 +19,8 @@ class GridRegionsWidget extends StatelessWidget {
     title: "Plateaux",
     // subtitle: "Hotels a proximité",
     img: "assets/images/togo.png",
-    mapRoute: MaritimMapPage(),
-    listRoute: MaritimMapPage(),
+    mapRoute: PlateauListPage(),
+    listRoute: PlateauListPage(),
   );
 
   Items item3 = new Items(
@@ -33,8 +35,8 @@ class GridRegionsWidget extends StatelessWidget {
     title: "Kara",
     // subtitle: "Meilleurs restaurants de la localite",
     img: "assets/images/togo.png",
-    mapRoute: MaritimMapPage(),
-    listRoute: MaritimMapPage(),
+    mapRoute: KaraListPage(),
+    listRoute: KaraListPage(),
   );
 
   Items item5 = new Items(

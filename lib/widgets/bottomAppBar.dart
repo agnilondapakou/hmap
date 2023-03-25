@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hmap/pages/dashboard_page.dart';
+import 'package:hmap/pages/profile_page.dart';
+import 'package:hmap/widgets/search_hotel.dart';
+
+import '../pages/hotels_list.dart';
 
 // ignore: must_be_immutable
 class BottomAppBarWidget extends StatelessWidget {
@@ -38,6 +42,27 @@ class BottomAppBarWidget extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) => DashboardPage(),
+            ),
+          );
+        } else if (index == 1) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HotelsListPage(),
+            ),
+          );
+        } else if (index == 2) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SearchHotelPage(),
+            ),
+          );
+        } else if (index == 3) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ProfilPage(),
             ),
           );
         }
