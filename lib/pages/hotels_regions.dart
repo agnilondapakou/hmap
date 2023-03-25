@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hmap/widgets/drawer_widget.dart';
+import 'package:hmap/widgets/bottomAppBar.dart';
 import '../widgets/grid_regions_widget.dart';
 
 class HotelsRegionsPage extends StatefulWidget {
@@ -15,10 +15,19 @@ class _HotelsRegionsPageState extends State<HotelsRegionsPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("H-Map"),
+        title: Text(
+          "Hotels Mapping",
+          style: TextStyle(
+            color: Color.fromARGB(255, 255, 255, 255),
+            fontSize: 20,
+            fontFamily: "Poppins",
+            fontWeight: FontWeight.w700,
+          ),
+        ),
         backgroundColor: Color.fromARGB(255, 0, 151, 178),
       ),
-      drawer: DrawerWidget(),
+      bottomNavigationBar: BottomAppBarWidget(index: 0),
+      // drawer: DrawerWidget(),
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Column(
         children: [
@@ -27,11 +36,11 @@ class _HotelsRegionsPageState extends State<HotelsRegionsPage> {
           ),
           Image(
             image: AssetImage("assets/images/regionmap.png"),
-            width: 150,
-            height: 150,
+            width: 110,
+            height: 110,
           ),
           Padding(
-            padding: EdgeInsets.only(left: 16, right: 16),
+            padding: EdgeInsets.only(left: 16, right: 16, top: 5),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -39,7 +48,7 @@ class _HotelsRegionsPageState extends State<HotelsRegionsPage> {
                   "Retrouvez les hotels par region",
                   style: TextStyle(
                     color: Color.fromARGB(255, 61, 61, 61),
-                    fontSize: 22,
+                    fontSize: 20,
                     fontFamily: "Poppins",
                     fontWeight: FontWeight.w700,
                   ),
@@ -52,7 +61,7 @@ class _HotelsRegionsPageState extends State<HotelsRegionsPage> {
             ),
           ),
           SizedBox(
-            height: 40,
+            height: 20,
           ),
           GridRegionsWidget(),
         ],

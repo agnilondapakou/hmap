@@ -1,42 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:hmap/pages/hotels_regions.dart';
 
+import '../pages/login_page.dart';
+
+// ignore: must_be_immutable
 class GridDashboardWidget extends StatelessWidget {
   Items item1 = new Items(
     title: "Hotels",
     subtitle: "Les meilleurs hotels du pays",
     img: "assets/images/hotelbtn.png",
-    route: 'LoginPage()',
+    route: HotelsRegionsPage(),
   );
 
   Items item2 = new Items(
-      title: "Localisations",
-      subtitle: "Hotels a proximité",
-      img: "assets/images/location.png",
-      route: 'HomePage()');
+    title: "Localisations",
+    subtitle: "Hotels a proximité",
+    img: "assets/images/location.png",
+    route: LoginPage(),
+  );
 
   Items item3 = new Items(
-      title: "Annonces",
-      subtitle: "Fil d'actualité des hotels",
-      img: "assets/images/news.png",
-      route: 'HomePage()');
+    title: "Annonces",
+    subtitle: "Fil d'actualité des hotels",
+    img: "assets/images/news.png",
+    route: LoginPage(),
+  );
 
   Items item4 = new Items(
-      title: "Restaurants",
-      subtitle: "Meilleurs restaurants de la localite",
-      img: "assets/images/resto.png",
-      route: 'HomePage()');
+    title: "Restaurants",
+    subtitle: "Meilleurs restaurants de la localite",
+    img: "assets/images/resto.png",
+    route: LoginPage(),
+  );
 
   Items item5 = new Items(
-      title: "Sites touristiques",
-      subtitle: "Les sites touristiques du pays",
-      img: "assets/images/sites.png",
-      route: 'HomePage()');
+    title: "Sites touristiques",
+    subtitle: "Les sites touristiques du pays",
+    img: "assets/images/sites.png",
+    route: LoginPage(),
+  );
 
   Items item6 = new Items(
-      title: "Historique",
-      subtitle: "Vos hotels préférés",
-      img: "assets/images/love.png",
-      route: 'HomePage()');
+    title: "Historique",
+    subtitle: "Vos hotels préférés",
+    img: "assets/images/love.png",
+    route: LoginPage(),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +111,10 @@ class GridDashboardWidget extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.pushNamed(context, data.route);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => data.route),
+              );
             },
           );
         }).toList(),
@@ -115,7 +127,7 @@ class Items {
   String title;
   String subtitle;
   String img;
-  String route;
+  Widget route;
   Items(
       {required this.title,
       required this.subtitle,

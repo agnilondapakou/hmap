@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 
 import 'route/routes_manager.dart';
 
+final int index = 0;
+
 void main() {
   runApp(const MyHomePage(
     title: 'H-Map',

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hmap/pages/hotels_regions.dart';
-import 'package:hmap/widgets/drawer_widget.dart';
+import 'package:hmap/widgets/bottomAppBar.dart';
 import 'package:hmap/widgets/grid_dashboard_widget.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -16,10 +15,19 @@ class _DashboardPageState extends State<DashboardPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("H-Map"),
+        title: Text(
+          "Hotels Mapping",
+          style: TextStyle(
+            color: Color.fromARGB(255, 255, 255, 255),
+            fontSize: 20,
+            fontFamily: "Poppins",
+            fontWeight: FontWeight.w700,
+          ),
+        ),
         backgroundColor: Color.fromARGB(255, 0, 151, 178),
       ),
-      drawer: DrawerWidget(),
+      bottomNavigationBar: BottomAppBarWidget(index: 0),
+      // drawer: DrawerWidget(),
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Column(
         children: [
@@ -64,9 +72,6 @@ class _DashboardPageState extends State<DashboardPage> {
             height: 20,
           ),
           GridDashboardWidget(),
-          SizedBox(
-            height: 40,
-          ),
         ],
       ),
     );
